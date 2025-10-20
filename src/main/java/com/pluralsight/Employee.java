@@ -3,14 +3,14 @@ package com.pluralsight;
 public class Employee {
     private int employeeID;
     private String employeeName, department, jobTitle;
-    private double wage, hoursWorked;
+    private double payRate, hoursWorked;
 
-    public Employee(int employeeID, String employeeName, String department, String jobTitle, double wage, double hoursWorked) {
+    public Employee(int employeeID, String employeeName, String department, String jobTitle, double payRate, double hoursWorked) {
         this.employeeID = employeeID;
         this.employeeName = employeeName;
         this.department = department;
         this.jobTitle = jobTitle;
-        this.wage = wage;
+        this.payRate = payRate;
         this.hoursWorked = hoursWorked;
     }
 
@@ -30,11 +30,30 @@ public class Employee {
         return jobTitle;
     }
 
-    public double getWage() {
-        return wage;
+    public double getPayRate() {
+        return payRate;
     }
 
     public double getHoursWorked() {
         return hoursWorked;
+    }
+
+    public double getWage() {
+        return payRate * hoursWorked;
+    }
+
+    public double getOvertimeHours () {
+        if (hoursWorked > 40) {
+            hoursWorked = hoursWorked - 40;
+        }
+        return hoursWorked;
+    }
+
+    public double getOvertimePay () {
+        return payRate * 1.5;
+    }
+
+    public double getOvertimeWage() {
+        return getOvertimePay() * getOvertimeHours();
     }
 }
