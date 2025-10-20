@@ -5,6 +5,7 @@ public class Room {
     private double price;
     private boolean isVacant, isClean;
 
+
     public Room(int numBeds, double price, boolean isVacant, boolean isClean) {
         this.numBeds = numBeds;
         this.price = price;
