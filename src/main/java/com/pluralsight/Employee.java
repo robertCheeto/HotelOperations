@@ -39,7 +39,7 @@ public class Employee {
     }
 
     public double getWage() {
-        return payRate * hoursWorked;
+        return payRate * 40;
     }
 
     public double getOvertimeHours () {
@@ -55,5 +55,9 @@ public class Employee {
 
     public double getOvertimeWage() {
         return getOvertimePay() * getOvertimeHours();
+    }
+
+    public double getTotalWage() {
+        return getWage() + getOvertimeWage();
     }
 }
