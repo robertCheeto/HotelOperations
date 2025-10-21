@@ -3,14 +3,15 @@ package com.pluralsight;
 public class Room {
     private int numBeds;
     private double price;
-    private boolean isVacant, isClean;
+    private boolean vacant, clean;
+    // when creating private boolen values, refrain from calling them isVarName
+    // just call the variable name whatever it is so the getter can insert "is" to the front
 
-
-    public Room(int numBeds, double price, boolean isVacant, boolean isClean) {
+    public Room(int numBeds, double price, boolean vacant, boolean clean) {
         this.numBeds = numBeds;
         this.price = price;
-        this.isVacant = isVacant;
-        this.isClean = isClean;
+        this.vacant = vacant;
+        this.clean = clean;
     }
 
     public int getNumBeds() {
@@ -22,15 +23,17 @@ public class Room {
     }
 
     public boolean isVacant() {
-        return isVacant;
+        return vacant;
     }
 
     public boolean isClean() {
-        return isClean;
+        return clean;
     }
 
+    // use the this.varName to get the direct instance of vacant AND clean
+    // can use isVacant() but calling the method might not yield exact result
     public boolean isAvailable() {
-        return isVacant && isClean;
+        return this.vacant && this.clean;
     }
 
 }
