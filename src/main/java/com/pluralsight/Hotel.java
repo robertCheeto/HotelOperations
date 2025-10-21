@@ -17,4 +17,26 @@ public class Hotel {
         this.bookedSuites = bookedSuites;
         this.bookedBasicRooms = bookedBasicRooms;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getNumberOfSuites() {
+        return numberOfSuites;
+    }
+
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public int getBookedSuites() {
+        return bookedSuites;
+    }
+
+    public int getBookedBasicRooms() {
+        return bookedBasicRooms;
+    }
+
+
 }
