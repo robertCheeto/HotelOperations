@@ -9,7 +9,7 @@ public class Main {
         // testing the Employee Class with an Object called Chris
         Employee Chris = new Employee(1, "Chris Brown", "Management",  17, 50);
 
-        System.out.println("The total amount Chris earned is $" + Chris.getTotalWage());
+//        System.out.println("The total amount Chris earned is $" + Chris.getTotalWage());
 //        System.out.print("Enter time in: ");
 //        double userNum = keyboard.nextDouble();
 //        keyboard.nextLine();

@@ -47,4 +47,5 @@ public class Room {
     public boolean isDirtyRoom() {
             return (isCheckedOut() && !isAvailable());
         }
+
     }
