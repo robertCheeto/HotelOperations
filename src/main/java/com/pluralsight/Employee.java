@@ -44,12 +44,10 @@ public class Employee {
 //        this.hoursWorked += time;
 //    }
 
-    public void punchTimeCard(double time) {
-        System.out.println("Enter time in: ");
-        this.hoursWorked = time;
+    public void punchTimeCard(double timeIn, double timeOut) {
+        this.hoursWorked = timeIn;
 
-        System.out.println("Enter time out: ");
-        this.hoursWorked += time;
+        this.hoursWorked = timeOut - this.hoursWorked;
     }
 
 }
