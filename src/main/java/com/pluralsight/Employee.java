@@ -2,62 +2,37 @@ package com.pluralsight;
 
 public class Employee {
     private int employeeID;
-    private String employeeName, department, jobTitle;
+    private String employeeName, department;
     private double payRate, hoursWorked;
 
-    public Employee(int employeeID, String employeeName, String department, String jobTitle, double payRate, double hoursWorked) {
+    public Employee(int employeeID, String employeeName, String department, double payRate, double hoursWorked) {
         this.employeeID = employeeID;
         this.employeeName = employeeName;
         this.department = department;
-        this.jobTitle = jobTitle;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
     }
 
-    public int getEmployeeID() {
-        return employeeID;
-    }
-
-    public String getEmployeeName() {
-        return employeeName;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public double getPayRate() {
-        return payRate;
-    }
-
     public double getHoursWorked() {
-        return hoursWorked;
-    }
-
-    public double getWage() {
-        return payRate * 40;
+        if (this.hoursWorked <= 40) {
+            return hoursWorked;
+        }
+        else {
+            return 40;
+        }
     }
 
     public double getOvertimeHours () {
         if (hoursWorked > 40) {
             hoursWorked = hoursWorked - 40;
         }
-        return hoursWorked;
-    }
-
-    public double getOvertimePay () {
-        return payRate * 1.5;
-    }
-
-    public double getOvertimeWage() {
-        return getOvertimePay() * getOvertimeHours();
+        return 0;
     }
 
     public double getTotalWage() {
-        return getWage() + getOvertimeWage();
+        double regularWage = this.payRate * this.getHoursWorked();
+        double overtimeWage = (this.payRate * 1.5) * this.getOvertimeHours();
+
+        return regularWage + overtimeWage;
     }
 }
