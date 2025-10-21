@@ -23,9 +23,6 @@ public class Main {
         System.out.println(Chris.getTotalWage() + " <- total wage");
 
 
-        // testing the Reservation class with a reservation
-        //Reservation slot1 = new Reservation("");
-
         // testing the Room class
         Room room1 = new Room(2, 124.00, true, false);
         System.out.println("Chris manages a hotel and has a room.");
@@ -34,11 +31,6 @@ public class Main {
         System.out.println("testing if the room is checked in: " + room1.isCheckedIn());
         System.out.println("testing if the room is checked out: " + room1.isCheckedOut());
         System.out.println("testing if the room is clean: " + room1.isCleanRoom());
-
-        // need to change how the program decides the price for the rooms
-        // and to say whether or not it is a king or a double
-        // need to rework the reservation class and make it so getting the dates for the reservation
-        // makes more sense from a program perspective
 
     }
 }
