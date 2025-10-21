@@ -44,7 +44,7 @@ public class Room {
         return (this.vacant && !this.clean);
     }
 
-    public boolean isCleanRoom() {
-            return isCheckedOut() && isAvailable();
+    public boolean isDirtyRoom() {
+            return (isCheckedOut() && !isAvailable());
         }
     }
