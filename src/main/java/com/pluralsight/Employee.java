@@ -35,4 +35,21 @@ public class Employee {
 
         return regularWage + overtimeWage;
     }
+
+//    public void setPunchIn(double time) {
+//        this.hoursWorked = time;
+//    }
+//
+//    public void setPunchOut(double time) {
+//        this.hoursWorked += time;
+//    }
+
+    public void punchTimeCard(double time) {
+        System.out.println("Enter time in: ");
+        this.hoursWorked = time;
+
+        System.out.println("Enter time out: ");
+        this.hoursWorked += time;
+    }
+
 }
