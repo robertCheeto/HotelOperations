@@ -37,24 +37,14 @@ public class Room {
     }
 
     public boolean isCheckedIn() {
-        return (!this.vacant && !this.clean);
+        return (!this.vacant);
     }
 
     public boolean isCheckedOut() {
-        if (!this.isCheckedIn() && !this.isClean()) {
-            return this.isCheckedOut();
-        }
-        else {
-            return !this.isCheckedOut();
-        }
+        return (this.vacant && !this.clean);
     }
 
     public boolean isCleanRoom() {
-        if (this.isCheckedOut() && this.isAvailable()) {
-            return this.isCleanRoom();
-        } else {
-            return !this.isCleanRoom();
+            return isCheckedOut() && isAvailable();
         }
     }
-
-}
