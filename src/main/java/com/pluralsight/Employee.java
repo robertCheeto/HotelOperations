@@ -41,7 +41,7 @@ public class Employee {
 //    }
 //
 //    public void setPunchOut(double time) {
-//        this.hoursWorked += time;
+//        this.hoursWorked = time - this.hoursWorked;
 //    }
 
     public void punchTimeCard(double timeIn, double timeOut) {
