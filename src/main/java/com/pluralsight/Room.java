@@ -33,7 +33,28 @@ public class Room {
     // use the this.varName to get the direct instance of vacant AND clean
     // can use isVacant() but calling the method might not yield exact result
     public boolean isAvailable() {
-        return this.vacant && this.clean;
+        return (this.vacant && this.clean);
+    }
+
+    public boolean isCheckedIn() {
+        return (!this.vacant && !this.clean);
+    }
+
+    public boolean isCheckedOut() {
+        if (!this.isCheckedIn() && !this.isClean()) {
+            return this.isCheckedOut();
+        }
+        else {
+            return !this.isCheckedOut();
+        }
+    }
+
+    public boolean isCleanRoom() {
+        if (this.isCheckedOut() && this.isAvailable()) {
+            return this.isCleanRoom();
+        } else {
+            return !this.isCleanRoom();
+        }
     }
 
 }
