@@ -27,10 +27,13 @@ public class Main {
         //Reservation slot1 = new Reservation("");
 
         // testing the Room class
-//        Room room1 = new Room(2, 124.00, true, false);
-//        System.out.println("Chris manages a hotel and has a room.");
-//        System.out.println("The room has " + room1.getNumBeds() + " and it costs $" + room1.getPrice());
-//        System.out.println("Is the room Vacant? " + room1.isVacant() + ". Ok but is it available? " + room1.isAvailable());
+        Room room1 = new Room(2, 124.00, true, false);
+        System.out.println("Chris manages a hotel and has a room.");
+        System.out.println("The room has " + room1.getNumBeds() + " and it costs $" + room1.getPrice());
+        System.out.println("Is the room Vacant? " + room1.isVacant() + ". Ok but is it available? " + room1.isAvailable());
+        System.out.println("testing if the room is checked in: " + room1.isCheckedIn());
+        System.out.println("testing if the room is checked out: " + room1.isCheckedOut());
+        System.out.println("testing if the room is clean: " + room1.isCleanRoom());
 
         // need to change how the program decides the price for the rooms
         // and to say whether or not it is a king or a double
