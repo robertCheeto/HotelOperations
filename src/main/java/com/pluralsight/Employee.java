@@ -1,13 +1,13 @@
 package com.pluralsight;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Employee {
     private int employeeID;
     private String employeeName, department;
-    private double payRate, hoursWorked, startTime, endTime;
-    private LocalTime currentTime;
+    private double payRate, hoursWorked, startTime;
 
     public Employee(int employeeID, String employeeName, String department, double payRate, double hoursWorked) {
         this.employeeID = employeeID;
@@ -46,13 +46,8 @@ public class Employee {
 
 
     public void punchIn() {
-        currentTime = LocalTime.now();
-        DateTimeFormatter localTimeFormat = DateTimeFormatter.ofPattern("HH.mm");
-
-        String timeString = currentTime.format(localTimeFormat);
-
-        this.startTime = Double.parseDouble(timeString);
-        System.out.println(this.startTime);
+        LocalDateTime currentTime = LocalDateTime.now();
+        this.startTime = currentTime.getHour() + (currentTime.getMinute() / 60);
 
     }
 
@@ -62,15 +57,11 @@ public class Employee {
     }
 
     public void punchOut() {
-        currentTime = LocalTime.now();
-        DateTimeFormatter localTimeFormat = DateTimeFormatter.ofPattern("HH.mm");
+        LocalDateTime currentTime = LocalDateTime.now();
+        double endTime = currentTime.getHour() + (currentTime.getMinute() / 60);
 
-        String timeString = currentTime.format(localTimeFormat);
-        this.endTime = Double.parseDouble(timeString);
-        System.out.println(this.endTime);
-
-        this.hoursWorked += ((this.endTime + 10) - this.startTime);
-        this.startTime = 0;
+        this.hoursWorked += (endTime - this.startTime);
+        this.startTime = -1;
     }
 
     public void punchTimeCard(double timeIn, double timeOut) {
@@ -80,6 +71,15 @@ public class Employee {
     }
 
     public void punchTimeCard() {
+        LocalDateTime currentTime = LocalDateTime.now();
+        double time = currentTime.getHour() + (currentTime.getMinute() / 60);
+
+        if (this.startTime > -1) { //punch out
+            this.hoursWorked += (time - this.startTime);
+            this.startTime = 0;
+        } else {
+            this.startTime = time;
+        }
 
     }
 

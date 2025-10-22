@@ -36,16 +36,18 @@ public class Room {
         return (this.vacant && this.clean);
     }
 
-    public boolean isCheckedIn() {
-        return (!this.vacant);
+    public void isCheckedIn() {
+        this.vacant = false;
+        this.clean = false;
     }
 
-    public boolean isCheckedOut() {
-        return (this.vacant && !this.clean);
+    public void isCheckedOut() {
+        this.vacant = true;
     }
 
-    public boolean isDirtyRoom() {
-            return (isCheckedOut() && !isAvailable());
+    public void isCleanRoom() {
+        this.clean = true;
+
         }
 
     }
