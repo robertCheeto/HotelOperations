@@ -48,6 +48,8 @@ public class Main {
         System.out.println("The hotel now has the following rooms remaining: " + BestWestern.getBookedBasicRooms());
         System.out.println("The hotel now has the following suites remaining: " + BestWestern.getBookedSuites());
         System.out.println("The hotel has this many rooms total: " + BestWestern.getNumberOfRooms());
+        System.out.println("The hotel has this many suites available: " + BestWestern.getAvailableSuites());
+        System.out.println("The hotel has this many rooms available: " + BestWestern.getAvailableRooms());
 
     }
 }
