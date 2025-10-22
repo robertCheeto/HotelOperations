@@ -58,5 +58,13 @@ public class Hotel {
         }
     }
 
+    public int getAvailableSuites() {
+        return this.numberOfSuites - this.bookedSuites;
+    }
+
+    public int getAvailableRooms() {
+        return this.numberOfRooms - this.bookedBasicRooms;
+    }
+
 
 }
