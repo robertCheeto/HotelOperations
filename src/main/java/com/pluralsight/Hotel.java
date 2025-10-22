@@ -38,5 +38,23 @@ public class Hotel {
         return bookedBasicRooms;
     }
 
+    public boolean bookRoom(int numberOfRooms, boolean isSuite) {
+        if (this.numberOfRooms > 0) {
+            System.out.println("There are " + this.numberOfRooms + " rooms available.");
+            if (numberOfRooms > this.numberOfRooms) {
+                System.out.println("You cannot book that many rooms.");
+            }
+            else if (numberOfRooms < this.numberOfRooms && !isSuite) {
+                System.out.println("You are booking " + numberOfRooms + " normal rooms.");
+                this.numberOfRooms -= numberOfRooms;
+            }
+            return true;
+        }
+        else {
+            System.out.println("There are no more rooms available.");
+            return false;
+        }
+    }
+
 
 }
