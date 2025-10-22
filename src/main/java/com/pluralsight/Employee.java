@@ -17,6 +17,13 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
 
+    public Employee(int employeeID, String employeeName, String department, double payRate) {
+        this.employeeID = employeeID;
+        this.employeeName = employeeName;
+        this.department = department;
+        this.payRate = payRate;
+    }
+
     public double getHoursWorked() {
         if (this.hoursWorked <= 40) {
             return this.hoursWorked;
@@ -47,7 +54,7 @@ public class Employee {
 
     public void punchIn() {
         LocalDateTime currentTime = LocalDateTime.now();
-        this.startTime = currentTime.getHour() + (currentTime.getMinute() / 60);
+        this.startTime = currentTime.getHour() + (currentTime.getMinute() / 60.0);
 
     }
 
@@ -58,7 +65,7 @@ public class Employee {
 
     public void punchOut() {
         LocalDateTime currentTime = LocalDateTime.now();
-        double endTime = currentTime.getHour() + (currentTime.getMinute() / 60);
+        double endTime = currentTime.getHour() + (currentTime.getMinute() / 60.0);
 
         this.hoursWorked += (endTime - this.startTime);
         this.startTime = -1;
