@@ -10,7 +10,7 @@ class EmployeeTest {
     void punchIn_time_should_be_current_time() {
         Employee dave = new Employee(1,"dave", "accounting", 12);
 
-        dave.punchIn();
+        dave.punchIn(10);
 
         assertEquals(0, dave.getHoursWorked());
         assertEquals(0, dave.getOvertimeHours());
@@ -22,12 +22,12 @@ class EmployeeTest {
     void total_hours_worked_time_should_be_zero_after_immediately_punchingIn() {
         Employee dave = new Employee(1,"dave", "accounting", 12);
 
-        dave.punchIn();
-        dave.punchOut();
+        dave.punchIn(10);
+        dave.punchOut(20);
 
-        assertEquals(0, dave.getHoursWorked());
+        assertEquals(10, dave.getHoursWorked());
         assertEquals(0, dave.getOvertimeHours());
-        assertEquals(0, dave.getTotalWage());
+        assertEquals(120, dave.getTotalWage());
 
     }
 
