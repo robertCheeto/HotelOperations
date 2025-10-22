@@ -7,11 +7,11 @@ public class Room {
     // when creating private boolen values, refrain from calling them isVarName
     // just call the variable name whatever it is so the getter can insert "is" to the front
 
-    public Room(int numBeds, double price, boolean vacant, boolean clean) {
+    public Room(int numBeds, double price) {
         this.numBeds = numBeds;
         this.price = price;
-        this.vacant = vacant;
-        this.clean = clean;
+        this.vacant = true;
+        this.clean = true;
     }
 
     public int getNumBeds() {
